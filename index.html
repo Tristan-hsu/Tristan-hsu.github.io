@@ -1,0 +1,376 @@
+<title>Tristan Hsu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #f1f4f1;
+    --surface: #fafcfa;
+    --ink: #1a2320;
+    --ink-soft: #4c574f;
+    --ink-faint: #7c877e;
+    --line: #d6dbd5;
+    --line-strong: #b9c1b7;
+    --accent: #a8721f;
+    --accent-ink: #ffffff;
+    --accent2: #2e7d74;
+    --shadow: 0 1px 0 rgba(26, 35, 32, 0.04);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101614;
+      --surface: #161e1c;
+      --ink: #e7ece7;
+      --ink-soft: #9daa9f;
+      --ink-faint: #6c786e;
+      --line: #293330;
+      --line-strong: #3a4642;
+      --accent: #dba955;
+      --accent-ink: #1a1206;
+      --accent2: #5fc4b6;
+      --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #101614;
+    --surface: #161e1c;
+    --ink: #e7ece7;
+    --ink-soft: #9daa9f;
+    --ink-faint: #6c786e;
+    --line: #293330;
+    --line-strong: #3a4642;
+    --accent: #dba955;
+    --accent-ink: #1a1206;
+    --accent2: #5fc4b6;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "Noto Sans", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a, .card { transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease; }
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: clamp(56px, 12vw, 108px) 0 clamp(40px, 8vw, 64px);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--surface) 0%, var(--paper) 120%);
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 20px;
+  }
+
+  .eyebrow::before {
+    content: "—";
+    color: var(--accent);
+    margin-right: 10px;
+  }
+
+  h1.thesis {
+    margin: 0 0 22px;
+    font-weight: 600;
+    line-height: 1.22;
+    text-wrap: balance;
+  }
+
+  .thesis-label {
+    display: block;
+    font-family: "Noto Serif TC", "Songti TC", serif;
+    font-size: clamp(2rem, 5.2vw, 3.1rem);
+    color: var(--ink);
+  }
+
+  .thesis-split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.28em;
+    margin-top: 0.12em;
+  }
+
+  .thesis-split .serif-part {
+    font-family: "Noto Serif TC", "Songti TC", serif;
+    font-size: clamp(2rem, 5.2vw, 3.1rem);
+    color: var(--ink);
+  }
+
+  .thesis-split .times {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(1.4rem, 3.4vw, 2rem);
+    color: var(--accent);
+  }
+
+  .thesis-split .mono-part {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(1.5rem, 3.9vw, 2.3rem);
+    font-weight: 500;
+    color: var(--accent2);
+  }
+
+  .lede {
+    max-width: 58ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 0 32px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.86rem;
+  }
+
+  .contact-row a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 2px;
+  }
+
+  .contact-row a:hover { border-color: var(--accent2); color: var(--accent2); }
+
+  /* ---------- Sections ---------- */
+
+  .category {
+    padding: clamp(40px, 7vw, 64px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .category:last-of-type { border-bottom: none; }
+
+  .category-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .category-tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+
+  .category-head h2 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .card {
+    background: var(--surface);
+    padding: 22px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card:hover { background: var(--paper); }
+
+  .card-code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  .card h3 {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    font-family: "Noto Sans TC", sans-serif;
+    color: var(--ink);
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    flex-grow: 1;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    padding-top: 4px;
+  }
+
+  .card-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+  }
+
+  .card-links a.primary { color: var(--accent2); }
+  .card-links a:hover { color: var(--accent); }
+  .card-links a::after { content: " ↗"; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding: 40px 0 64px;
+  }
+
+  footer p {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  footer a {
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+
+  footer a:hover { color: var(--accent2); text-decoration-color: var(--accent2); }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">許銘軒 · AI Agent Engineer</p>
+    <h1 class="thesis">
+      <span class="thesis-label">π 型人才</span>
+      <span class="thesis-split">
+        <span class="serif-part">賽局理論</span>
+        <span class="times">×</span>
+        <span class="mono-part">AI 系統工程</span>
+      </span>
+    </h1>
+    <p class="lede">具備商業溝通與工程實作雙背景的 AI Agent 工程師。近期專注於將可重用的分析流程封裝為標準化技能模組,建立個人 Agent Skill Library,並協助企業把 AI Use Case 轉譯為可落地的技術架構與規格。</p>
+    <div class="contact-row">
+      <a href="mailto:minghsuanhsu.workspace@gmail.com">minghsuanhsu.workspace@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ming-hsuan-hsu-33ba4793/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Tristan-hsu" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section class="category">
+    <div class="category-head">
+      <span class="category-tag">MCP</span>
+      <h2>Agent 工具</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <p class="card-code">MCP · 01</p>
+        <h3>natal_mcp</h3>
+        <p>MCP 伺服器,提供占星命盤生成與分析功能 — 本命盤、行運盤、合盤。</p>
+        <div class="card-links">
+          <a class="primary" href="https://github.com/Tristan-hsu/natal_mcp" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="card-code">MCP · 02</p>
+        <h3>mcp_obsidian_control_agent</h3>
+        <p>透過 MCP 協議讓 LLM 直接操控本地 Obsidian 知識庫的 agent。</p>
+        <div class="card-links">
+          <a class="primary" href="https://github.com/Tristan-hsu/mcp_obsidian_control_agent" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="category-head">
+      <span class="category-tag">RAG</span>
+      <h2>LLM 系統</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <p class="card-code">RAG · 01</p>
+        <h3>RAG-LLM</h3>
+        <p>以 LangChain、ChromaDB 與本地 LLM(Llama3 / Ollama)打造的 PDF 文件 RAG 系統。</p>
+        <div class="card-links">
+          <a class="primary" href="https://github.com/Tristan-hsu/RAG-LLM" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="category-head">
+      <span class="category-tag">WEB</span>
+      <h2>應用</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <p class="card-code">WEB · 01</p>
+        <h3>astro_ai</h3>
+        <p>AI 占星師網頁應用,Docker 容器化並以 CI/CD 部署,附線上 demo。</p>
+        <div class="card-links">
+          <a class="primary" href="https://huggingface.co/spaces/TristanHsu/astro_ai" target="_blank" rel="noopener">Demo</a>
+          <a href="https://github.com/Tristan-hsu/astro_ai" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+      <article class="card">
+        <p class="card-code">WEB · 02</p>
+        <h3>personal_pages</h3>
+        <p>第一版個人網站(Flask 全端,雙語支援),是這個 Hub 頁面的前身。</p>
+        <div class="card-links">
+          <a class="primary" href="https://github.com/Tristan-hsu/personal_pages" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>持續把分散的 repo 串成一條故事線 — 有想討論的專案或合作機會,歡迎<a href="mailto:minghsuanhsu.workspace@gmail.com">來信</a>。</p>
+  </footer>
+
+</div>
