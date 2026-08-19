@@ -347,6 +347,49 @@
   .card-links a:hover { color: var(--accent); }
   .card-links a::after { content: " ↗"; }
 
+  /* ---------- Activity log ---------- */
+
+  .activity-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+  }
+
+  .activity-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+
+  .activity-repo {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    color: var(--accent2);
+    flex: 0 0 auto;
+  }
+
+  .activity-item a {
+    color: var(--ink);
+    text-decoration: none;
+    flex: 1 1 260px;
+  }
+
+  .activity-item a:hover { color: var(--accent); }
+
+  .activity-date {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    margin-left: auto;
+  }
+
   /* ---------- Footer ---------- */
 
   footer {
@@ -407,6 +450,47 @@
       <a href="https://github.com/Tristan-hsu" target="_blank" rel="noopener">GitHub</a>
     </div>
   </header>
+
+  <section class="category">
+    <div class="category-head">
+      <span class="category-tag">LOG</span>
+      <h2>最新動態</h2>
+    </div>
+    <ul class="activity-list">
+      <!-- LATEST-ACTIVITY:START -->
+      <li class="activity-item">
+        <span class="activity-repo">learning_library</span>
+        <a href="https://github.com/Tristan-hsu/learning_library/commit/0c58e05f490fbfad32fa4c970acf9b3302f85732" target="_blank" rel="noopener">first commit</a>
+        <span class="activity-date">2026-08-19</span>
+      </li>
+      <li class="activity-item">
+        <span class="activity-repo">natal_mcp</span>
+        <a href="https://github.com/Tristan-hsu/natal_mcp/commit/e316629734ca998851b5cf4c4159bf055122ef0e" target="_blank" rel="noopener">first</a>
+        <span class="activity-date">2025-07-31</span>
+      </li>
+      <li class="activity-item">
+        <span class="activity-repo">model_thinking</span>
+        <a href="https://github.com/Tristan-hsu/model_thinking/commit/ea92611f21671e17b85e60efd53329fe220f0b1e" target="_blank" rel="noopener">first publish</a>
+        <span class="activity-date">2025-07-15</span>
+      </li>
+      <li class="activity-item">
+        <span class="activity-repo">personal_pages</span>
+        <a href="https://github.com/Tristan-hsu/personal_pages/commit/6fa27bd558ffe749826d06558b2888097039eba2" target="_blank" rel="noopener">Update Dockerfile</a>
+        <span class="activity-date">2025-07-11</span>
+      </li>
+      <li class="activity-item">
+        <span class="activity-repo">astro_ai</span>
+        <a href="https://github.com/Tristan-hsu/astro_ai/commit/d7a8d5932caa4b1487652b6859b83ca20625e490" target="_blank" rel="noopener">minor</a>
+        <span class="activity-date">2025-07-04</span>
+      </li>
+      <li class="activity-item">
+        <span class="activity-repo">RAG-LLM</span>
+        <a href="https://github.com/Tristan-hsu/RAG-LLM/commit/69ee34024c6e7838769038d429afbf1a21044e88" target="_blank" rel="noopener">modify the database</a>
+        <span class="activity-date">2025-07-03</span>
+      </li>
+      <!-- LATEST-ACTIVITY:END -->
+    </ul>
+  </section>
 
   <section class="category">
     <div class="category-head">

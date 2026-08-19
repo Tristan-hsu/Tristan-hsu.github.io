@@ -1,0 +1,40 @@
+name: Update homepage activity
+
+on:
+  schedule:
+    - cron: "17 22 * * *" # 06:17 Asia/Taipei daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-homepage
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch latest activity and update index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update-homepage.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "No changes."
+            exit 0
+          fi
+          git add index.html
+          git commit -m "chore: update latest activity"
+          git push
